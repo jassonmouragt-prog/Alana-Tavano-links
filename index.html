@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>Alana Tavano - LINKS</title>
+<meta name="description" content="Site oficial de Alana Tavano. Música, projetos, vídeos e contato para shows e eventos.">
+<meta name="theme-color" content="#FDF8F5">
+<meta name="color-scheme" content="light">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Alana Tavano">
+<meta property="og:title" content="Alana Tavano | Site Oficial">
+<meta property="og:description" content="Site oficial de Alana Tavano. Música, projetos, vídeos e contato para shows e eventos.">
+<meta property="og:image" content="./assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Alana Tavano - Cantora, artista e autora">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Alana Tavano | Site Oficial">
+<meta name="twitter:description" content="Site oficial de Alana Tavano. Música, projetos, vídeos e contato para shows e eventos.">
+<meta name="twitter:image" content="./assets/og.jpg">
+
+<link rel="icon" type="image/png" href="./favicon alana.png">
+<link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
+
+<script>
+window.LINKS = {
+  perfil: {
+    nome:   "Alana Tavano",
+    handle: "@alanatavano",
+    bio:    "Música, histórias e encontros que carregam propósito."
+  },
+  destinos: [
+    { id:"site",  destaque:true,
+      titulo:"Site Oficial", sub:"Conheça a trajetória, projetos, músicas e novidades",
+      url:"[LINK_DO_SITE_OFICIAL]" },
+
+    { id:"youtube",   titulo:"YouTube",   sub:"Assista aos clipes, apresentações e conteúdos da Alana",
+      url:"https://www.youtube.com/@alanatavano105" },
+
+    { id:"eventos",   titulo:"Contato para Eventos",   sub:"Shows, apresentações, igrejas, conferências e eventos",
+      url:"https://wa.me/5511984500124" }
+  ],
+  PASSAR_UTMS: true
+};
+document.documentElement.className += " js";
+</script>
+
+<link rel="preload" as="image" type="image/webp" href="./assets/hero-mobile.webp" media="(max-width:719px)" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" href="./assets/hero.webp" media="(min-width:720px)" fetchpriority="high">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Crimson+Text:wght@600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   RESET
+   ═══════════════════════════════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0}
+html{-webkit-text-size-adjust:100%;overflow-x:hidden}
+img,picture,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;padding:0}
+a,button,a *,button *{cursor:pointer}
+a::before,a::after,button::before,button::after{pointer-events:none}
+:where(h1,h2,h3,p){overflow-wrap:break-word}
+
+/* ═══════════════════════════════════════════════════════════════
+   TOKENS
+   ═══════════════════════════════════════════════════════════════ */
+:root{
+  --bg:        #FFFFFF;
+  --bg-2:      #F8F9FA;
+  --card:      rgba(0,0,0,.035);
+  --card-h:    rgba(0,0,0,.06);
+  --card-solid:#F1F3F5;
+  --line:      rgba(0,0,0,.08);
+  --line-p:    rgba(0,0,0,.45);
+
+  --gray:      #6C757D;
+  --gray-2:    #495057;
+  --gray-3:    #343A40;
+  --accent:    #495057;
+  --grad:      linear-gradient(135deg,#FFFFFF 0%,#F8F9FA 55%,#F1F3F5 100%);
+  --grad-alt:  linear-gradient(135deg,#E9ECEF 0%,#DEE2E6 100%);
+  --grad-ig:   linear-gradient(45deg,#E0C2B6,#D6B6A8 25%,#C0A090 50%,#A88C78);
+  --red-yt:    #FF0033;
+  --blue-tg:   #29A9EA;
+  --teal-live: #35E0C0;
+
+  --grad-cta:  linear-gradient(135deg,#495057 0%,#6C757D 100%);
+
+  --text:      #212529;
+  --text-2:    #495057;
+  --text-3:    #6C757D;
+
+  --glow-p:    0 8px 32px rgba(0,0,0,.08);
+  --glow-cta:  0 12px 40px rgba(0,0,0,.15);
+  --glow-rad:  radial-gradient(circle, rgba(108,117,125,.15) 0%, rgba(0,0,0,0) 70%);
+
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --mono:  'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --name:  clamp(1.875rem, 5vw, 2.5rem);
+  --h2:    clamp(1.25rem, 3vw, 1.6rem);
+  --link:  1.0625rem;
+  --body:  .9375rem;
+  --label: .6875rem;
+
+  --col:   560px;
+  --gut:   20px;
+  --r-tile:12px; --r-card:16px; --r-hero:18px;
+
+  --ease:  cubic-bezier(.16,1,.3,1);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BASE
+   ═══════════════════════════════════════════════════════════════ */
+body{
+  position:relative;
+  min-height:100vh;
+  background-image:url("./bg alana.png");
+  background-size:cover;
+  background-position:center top;
+  background-repeat:no-repeat;
+  background-color:transparent;
+  color:var(--text);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.6;
+  overflow-x:clip;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+body::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  background:rgba(255,255,255,.85);
+  pointer-events:none;
+}
+.wrap{width:100%;max-width:var(--col);margin-inline:auto;padding-inline:var(--gut)}
+.mono{font-family:var(--mono);font-weight:500}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+a:focus-visible,button:focus-visible{
+   outline:2px solid var(--gray-3);
+  outline-offset:3px;
+  border-radius:var(--r-card);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   COMPONENTES
+   ═══════════════════════════════════════════════════════════════ */
+
+/* — pill / badge — */
+.badge{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:6px 12px;border-radius:999px;
+  background:rgba(108,117,125,.14);
+  border:1px solid rgba(108,117,125,.35);
+  color:var(--gray-3);
+  font-family:var(--mono);font-weight:500;
+  font-size:var(--label);text-transform:uppercase;letter-spacing:.14em;
+  line-height:1;
+}
+.badge i{width:5px;height:5px;border-radius:999px;background:currentColor;flex:none}
+
+/* — ícones — */
+.ic{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;
+    stroke-linecap:round;stroke-linejoin:round}
+.ic--fill{fill:currentColor;stroke:none}
+.ic--marca{width:24px;height:24px}
+
+/* — tile de ícone — */
+.tile{
+  width:40px;height:40px;flex:none;
+  display:grid;place-items:center;
+  border-radius:var(--r-tile);
+  transition:transform .2s ease-out;
+}
+
+/* — CARD DE LINK (base) — */
+.card{
+  position:relative;
+  display:flex;align-items:center;gap:14px;
+  min-height:68px;padding:0 16px;
+  border-radius:var(--r-card);
+  background:var(--card);
+  border:1px solid var(--line);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  transition:transform .2s ease-out, border-color .2s ease-out,
+             box-shadow .2s ease-out, background-color .2s ease-out;
+}
+.card__txt{min-width:0;flex:1}
+.card__t{
+  display:flex;align-items:center;gap:8px;
+  font-size:var(--link);font-weight:600;line-height:1.25;letter-spacing:-.01em;
+}
+.card__s{
+  display:block;margin-top:3px;
+  font-family:var(--mono);font-weight:500;
+  font-size:var(--label);color:var(--text-3);
+  letter-spacing:.02em;line-height:1.3;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.card__go{color:var(--text-3);flex:none;transition:transform .2s ease-out,color .2s ease-out}
+.card__go .ic{width:18px;height:18px}
+
+/* — CARD 1 · destaque — */
+.card--hero{
+  min-height:76px;
+  border-radius:var(--r-hero);
+  background:var(--grad-cta);
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:var(--glow-cta);
+  overflow:hidden;
+  -webkit-backdrop-filter:none;backdrop-filter:none;
+}
+.card--hero .card__t{font-size:var(--link);font-weight:700;color:#fff}
+.card--hero .card__s{color:#fff;letter-spacing:.03em}
+.card--hero .card__go{color:#fff}
+.card--hero .tile{
+  width:44px;height:44px;
+  background:rgba(255,255,255,.16);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  color:#fff;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.22);
+}
+.card--hero .ic{stroke-width:1.9}
+
+/* — tiles por destino — */
+.card--tg  .tile{background:rgba(41,169,234,.14); color:var(--blue-tg)}
+.card--ig  .tile{background:rgba(220,39,67,.14)}
+.card--yt  .tile{background:rgba(255,0,51,.14);   color:var(--red-yt)}
+
+/* ponto "ao vivo" do Telegram (M-08) */
+.live{position:relative;width:8px;height:8px;flex:none;border-radius:999px;
+      background:var(--teal-live);display:inline-block}
+.live::after{content:'';position:absolute;inset:0;border-radius:999px;
+      box-shadow:0 0 0 0 rgba(53,224,192,.65)}
+
+/* — BOTÃO CTA — */
+.btn{
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;min-height:60px;padding:0 22px;
+  border-radius:var(--r-hero);
+  background:var(--grad-cta);
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:var(--glow-cta);
+  color:#fff;font-size:var(--link);font-weight:700;letter-spacing:-.01em;
+  transition:transform .2s ease-out, box-shadow .2s ease-out;
+}
+.btn .ic{width:18px;height:18px}
+.btn .ic--marca{width:22px;height:22px}
+.btn__go{display:inline-flex;transition:transform .2s ease-out}
+
+/* ═══════════════════════════════════════════════════════════════
+   SEÇÕES
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── S1 · HERO ────────────────────────────────────────────────── */
+.hero{
+  position:relative;isolation:isolate;
+  min-height:72vh;
+  display:flex;flex-direction:column;justify-content:flex-end;align-items:center;
+  text-align:center;
+  padding-top:104px;
+  background:none;
+}
+.hero__media{
+  display:none;
+}
+.hero__media picture{display:block;width:100%;height:100%}
+.hero__img{width:100%;height:100%;object-fit:cover;object-position:50% 42%}
+.hero__scrim{
+  display:none;
+}
+.hero__glow{
+  display:none;
+}
+.hero__mark{
+  position:absolute;top:32px;left:0;right:0;margin-inline:auto;
+  width:150px;height:auto;
+  filter:drop-shadow(0 4px 18px rgba(110,59,255,.55));
+}
+.hero__content{display:flex;flex-direction:column;align-items:center;padding-bottom:4px}
+
+/* avatar + anel girando (M-06) */
+.ava{position:relative;width:112px;height:112px;margin-bottom:20px}
+.ava::before{
+  content:'';position:absolute;inset:-3px;border-radius:999px;
+  background:conic-gradient(from 0deg,#6C757D,#495057,#343A40,#6C757D);
+  animation:spin 8s linear infinite;
+}
+.ava::after{
+  content:'';position:absolute;inset:-14px;border-radius:999px;
+  background:var(--glow-rad);z-index:-1;
+}
+.ava img{
+  position:relative;width:112px;height:112px;border-radius:999px;
+  object-fit:cover;background:var(--bg-2);
+}
+
+.name{
+  margin-top:14px;text-wrap:balance;
+  font-size:var(--name);font-weight:800;line-height:1.05;letter-spacing:-.02em;
+}
+.handle{
+  margin-top:8px;padding:4px 8px;border-radius:8px;
+  font-family:var(--mono);font-weight:500;font-size:.8125rem;
+  color:var(--text-2);letter-spacing:.01em;
+  transition:color .18s ease-out,background-color .18s ease-out;
+}
+.handle b{color:var(--gray-3);font-weight:500}
+.handle:hover{color:var(--text);background:rgba(255,255,255,.05)}
+.handle[data-copied="1"]{color:var(--gray-3)}
+.bio{
+  margin-top:10px;max-width:32ch;text-wrap:balance;
+  font-size:var(--body);line-height:1.6;color:var(--text-2);
+}
+
+/* sentinela do sticky (M-10) e fade curto do handle (M-09) */
+#sHero{display:block;width:100%;height:1px}
+#handleTxt{display:inline-block;transition:opacity .13s ease-out}
+
+/* ── ASSINATURA · a linha central ────────────────────────────── */
+.stack{position:relative;padding-top:34px}
+.stack::before{
+  content:'';position:absolute;z-index:0;
+  left:50%;top:0;bottom:var(--spine-end,96px);width:1px;
+  transform:translateX(-.5px);
+  background:repeating-linear-gradient(180deg,
+    rgba(108,117,125,.24) 0 5px, transparent 5px 15px);
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 7%,#000 90%,transparent);
+          mask-image:linear-gradient(180deg,transparent,#000 7%,#000 90%,transparent);
+  pointer-events:none;
+}
+.stack > *{position:relative;z-index:1}
+
+/* ── S2 · VITRINE DE LINKS ────────────────────────────────────── */
+.links{display:flex;flex-direction:column;gap:14px}
+.noscript{
+  padding:12px 16px;border-radius:var(--r-card);
+  background:rgba(255,0,51,.10);border:1px solid rgba(255,0,51,.34);
+  font-size:.8125rem;color:#FFC9D2;
+}
+
+/* ── S3 · FAIXA DE CONTEXTO ───────────────────────────────────── */
+.ctx{margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.ctx__i{
+  padding:16px 14px 18px;border-radius:var(--r-card);
+  background:#F8F9FA;
+  border:1px solid var(--line-p);
+  box-shadow:var(--glow-p);
+  text-align:left;
+}
+.ctx__ic{
+  width:34px;height:34px;margin-bottom:12px;border-radius:10px;
+  display:grid;place-items:center;
+  background:rgba(108,117,125,.16);color:var(--gray-3);
+}
+.ctx__ic .ic{width:17px;height:17px}
+.ctx__t{
+  font-family:var(--mono);font-weight:500;font-size:var(--label);
+  text-transform:uppercase;letter-spacing:.12em;color:var(--gray-3);
+  line-height:1.35;
+}
+.ctx__p{margin-top:7px;font-size:.8125rem;line-height:1.5;color:var(--text-2)}
+
+/* ── S4 · CTA DE FECHAMENTO ───────────────────────────────────── */
+.close{margin-top:48px;text-align:center}
+.close__h{text-wrap:balance;font-size:1.25rem;font-weight:700;letter-spacing:-.015em;line-height:1.3}
+.close__b{margin-top:18px}
+
+/* ── S5 · RODAPÉ ──────────────────────────────────────────────── */
+.foot{
+  margin-top:56px;padding:28px 0 40px;
+  border-top:1px solid var(--line);
+  text-align:center;
+}
+.foot__id{display:flex;align-items:center;justify-content:center;gap:9px}
+.foot__id img{width:22px;height:22px;opacity:.9}
+.foot__id span{font-size:.875rem;font-weight:600;letter-spacing:-.01em}
+.foot__c{margin-top:10px;font-size:.75rem;color:var(--text-3)}
+.foot__r{margin-top:14px;font-size:.75rem;line-height:1.55;color:var(--text-3);max-width:44ch;margin-inline:auto}
+
+/* ── S6 · BARRA FIXA (mobile) ─────────────────────────────────── */
+.dock{
+  position:fixed;left:0;right:0;bottom:0;z-index:40;
+  display:none;
+  padding:12px var(--gut) calc(12px + env(safe-area-inset-bottom));
+  background:rgba(255,255,255,.95);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border-top:1px solid var(--line);
+  transform:translateY(100%);
+  transition:transform .32s var(--ease);
+}
+.dock.is-on{transform:translateY(0)}
+.dock .btn{min-height:52px}
+
+/* ═══════════════════════════════════════════════════════════════
+   MOTION
+   ═══════════════════════════════════════════════════════════════ */
+
+/* M-01 · aurora drift */
+.aurora{display:none}
+.aurora i{position:absolute;display:block;border-radius:999px;
+  filter:blur(80px);opacity:.35;will-change:transform}
+.aurora i:nth-child(1){
+  width:600px;height:600px;left:-16%;top:22%;
+  background:radial-gradient(circle,var(--gray) 0%,rgba(108,117,125,0) 68%);
+  animation:au1 28s ease-in-out infinite alternate;
+}
+.aurora i:nth-child(2){
+  width:420px;height:420px;right:-14%;top:58%;
+  background:radial-gradient(circle,var(--gray-2) 0%,rgba(73,80,87,0) 68%);
+  animation:au2 37s ease-in-out infinite alternate;
+}
+@keyframes au1{from{transform:translate3d(0,0,0)}to{transform:translate3d(90px,-70px,0)}}
+@keyframes au2{from{transform:translate3d(0,0,0)}to{transform:translate3d(-80px,60px,0)}}
+
+/* M-02 · Ken Burns */
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.06)}}
+.hero__img{animation:kb 18s cubic-bezier(.2,.6,.2,1) forwards}
+.js .hero__img{opacity:0;transition:opacity .55s ease-out}
+.js .hero__img.is-ready{opacity:1}
+
+/* M-03 · entrada em cascata */
+.js .rv{opacity:0;transform:translateY(16px);filter:blur(8px)}
+.js .rv.in{
+  opacity:1;transform:none;filter:none;
+  transition:opacity .62s var(--ease),transform .62s var(--ease),filter .62s var(--ease);
+  transition-delay:calc(var(--d,0) * 70ms);
+}
+
+/* M-04 · card lift */
+@media (hover:hover){
+  .card:not(.card--hero):hover{
+    transform:translateY(-3px);background:var(--card-h);
+    border-color:var(--line-p);box-shadow:var(--glow-p);
+  }
+  .card:hover .tile{transform:scale(1.06)}
+  .card:hover .card__go{transform:translateX(4px)}
+  .card:not(.card--hero):hover .card__go{color:var(--gray-3)}
+  .card--ig:not(.card--hero):hover{
+    border-color:transparent;
+    background:linear-gradient(var(--card-solid),var(--card-solid)) padding-box,
+               var(--grad-ig) border-box;
+  }
+  .card--hero:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(110,59,255,.44)}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 16px 48px rgba(110,59,255,.44)}
+  .btn:hover .btn__go{transform:translateX(4px)}
+}
+.card:not(.card--hero):focus-visible{transform:translateY(-3px);background:var(--card-h);box-shadow:var(--glow-p)}
+.card--hero:focus-visible{transform:translateY(-3px);box-shadow:0 16px 48px rgba(110,59,255,.44)}
+.card:active,.btn:active{transform:translateY(-3px);transition-duration:.12s}
+.btn:active{transform:translateY(-1px) scale(.995)}
+
+/* M-05 · shine sweep */
+.card--hero::after,.btn::after{
+  content:'';position:absolute;top:-60%;left:-70%;
+  width:42%;height:220%;pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);
+  animation:sweep 4.5s var(--ease) infinite;
+}
+@keyframes sweep{
+  0%  {transform:rotate(16deg) translateX(0);opacity:0}
+  5%  {opacity:1}
+  30% {transform:rotate(16deg) translateX(430%);opacity:1}
+  35% {transform:rotate(16deg) translateX(430%);opacity:0}
+  100%{transform:rotate(16deg) translateX(430%);opacity:0}
+}
+
+/* M-06 · anel do avatar */
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* M-07 · cursor spotlight */
+.spot{
+  display:none;
+}
+.spot.is-on{opacity:1}
+
+/* M-08 · live dot */
+@keyframes pulse{
+  0%  {box-shadow:0 0 0 0 rgba(53,224,192,.55)}
+  70% {box-shadow:0 0 0 7px rgba(53,224,192,0)}
+  100%{box-shadow:0 0 0 0 rgba(53,224,192,0)}
+}
+.live::after{animation:pulse 2s ease-out infinite}
+
+/* camadas */
+.hero,main,.foot{position:relative;z-index:2}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVO
+   ═══════════════════════════════════════════════════════════════ */
+@supports (height:100svh){.hero{min-height:72svh}}
+
+@media (max-width:1023px){
+  .hero{min-height:64vh;padding-top:92px}
+  .hero__img{object-position:50% 58%}
+  .hero__media{background-position:center 58%}
+}
+@supports (height:100svh){
+  @media (max-width:1023px){.hero{min-height:64svh}}
+}
+
+@media (max-width:719px){
+  .hero{min-height:68vh;padding-top:84px}
+  .hero__img{object-position:50% 46%}
+  .hero__media{background-position:center 46%}
+  .ava{width:92px;height:92px;margin-bottom:16px}
+  .ava img{width:92px;height:92px}
+  .hero__mark{width:130px;height:auto;top:26px}
+  .ctx{grid-template-columns:1fr;gap:10px}
+  .ctx__i{display:flex;align-items:flex-start;gap:14px;padding:14px}
+  .ctx__ic{margin-bottom:0}
+  .dock{display:block}
+  body{padding-bottom:84px;background-image:url("./bg alana mobile.png")}
+  .close{margin-top:40px}
+}
+@supports (height:100svh){
+  @media (max-width:719px){.hero{min-height:68svh}}
+}
+
+@media (max-width:379px){
+  :root{--gut:16px}
+  .card{min-height:64px;gap:12px;padding:0 13px}
+  .card--hero{min-height:70px}
+  .card:not(.card--hero) .card__s{display:none}
+  .card--hero .card__s{font-size:.625rem;letter-spacing:.01em}
+  .tile{width:36px;height:36px}
+  .card--hero .tile{width:40px;height:40px}
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   REDUCED-MOTION
+   ═══════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important;
+  }
+  .aurora i{animation:none;transform:none}
+  .hero__img{animation:none;transform:scale(1.03)}
+  .ava::before{animation:none}
+  .card--hero::after,.btn::after{display:none}
+  .spot{display:none}
+  .live::after{animation:none;box-shadow:0 0 0 3px rgba(53,224,192,.25)}
+  .js .rv{opacity:1;transform:none;filter:none}
+  .dock{transition:none}
+}
+</style>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false">
+  <symbol id="i-marca" viewBox="0 0 636 462">
+    <path fill="currentColor" stroke="none"
+          d="M0 0L93 0L157 187L479 187L543 0L636 0L557 231L636 462L543 462L479 275L157 275L93 462L0 462L79 231Z"/>
+  </symbol>
+  <symbol id="i-go" viewBox="0 0 24 24">
+    <path d="M4.5 12h14M13 6.6 18.4 12 13 17.4"/>
+  </symbol>
+  <symbol id="i-tg" viewBox="0 0 24 24">
+    <path fill="currentColor" stroke="none" d="M22.2 2.9 1.95 10.7c-.55.21-.54.99.02 1.18l5.02 1.68 1.9 5.86c.19.57.9.73 1.31.28l2.63-2.9 5.03 3.68c.44.33 1.06.09 1.18-.44l3.63-16.2c.13-.57-.42-1.03-.97-.83Z"/>
+    <path fill="none" stroke="#000" stroke-opacity=".24" stroke-width="1.3" d="m9.3 19.4-.31-5.84L19.4 5.6"/>
+  </symbol>
+  <symbol id="i-yt" viewBox="0 0 24 24">
+    <rect x="2.2" y="5" width="19.6" height="14" rx="4.4"/>
+    <path fill="currentColor" stroke="none" d="m10.3 9.05 5.35 2.95-5.35 2.95z"/>
+  </symbol>
+  <symbol id="i-live" viewBox="0 0 24 24">
+    <rect x="2.4" y="5.6" width="13.4" height="12.8" rx="3.2"/>
+    <path d="m15.8 12 5.8-3.5v11L15.8 16z"/>
+  </symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24">
+    <path d="M2.4 8.6 12 4.3l9.6 4.3-9.6 4.3z"/>
+    <path d="M6.6 10.7v4.7c0 1.7 2.4 3 5.4 3s5.4-1.3 5.4-3v-4.7"/>
+    <path d="M21.6 8.6v5.5"/>
+  </symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24">
+    <path d="M12 3.2 4.9 5.9v5.4c0 4.2 2.9 7.8 7.1 9.3 4.2-1.5 7.1-5.1 7.1-9.3V5.9z"/>
+    <path d="m9 11.9 2.2 2.2 4-4.3"/>
+  </symbol>
+</svg>
+
+<!-- M-01 · aurora + M-07 · spotlight -->
+<div class="aurora" aria-hidden="true"><i></i><i></i></div>
+<div class="spot" id="spot" aria-hidden="true"></div>
+
+<!-- ══ S1 · HERO ══════════════════════════════════════════════ -->
+<header class="hero">
+  <div class="hero__media" id="heroMedia">
+    <picture>
+      <source media="(max-width:719px)" type="image/webp" srcset="./assets/hero-mobile.webp">
+      <source media="(max-width:719px)" type="image/jpeg" srcset="./assets/hero-mobile.jpg">
+    </picture>
+    <img class="hero__img fade-in" src="./assets/hero.jpg" width="1080" height="1079"
+         fetchpriority="high"
+         alt="Lucas Morais entre dois carros roxos com os faróis acesos, em uma estrada de serra com neblina">
+  </div>
+  <div class="hero__scrim" aria-hidden="true"></div>
+  <div class="hero__glow" aria-hidden="true"></div>
+
+  <img class="hero__mark rv" style="--d:0" src="./logo alana cinza.png" width="2048" height="682"
+       decoding="async" alt="Símbolo do Lucas Morais">
+
+  <div class="hero__content wrap">
+    <div class="ava rv" style="--d:1">
+      <picture>
+        <img src="./avatar alana.jpg" width="112" height="112" decoding="async"
+             alt="Retrato de Lucas Morais">
+      </picture>
+    </div>
+
+    <p class="badge rv" style="--d:2"><i aria-hidden="true"></i>Cantora • Artista • Autora</p>
+
+    <h1 class="name rv" style="--d:3">Alana Tavano</h1>
+
+    <button class="handle rv" style="--d:4" id="handle" type="button"
+            aria-label="Copiar o perfil @alanatavano">
+      <span id="handleTxt"><b>@</b>alanatavano</span>
+    </button>
+    <span class="sr" id="say" aria-live="polite"></span>
+
+    <p class="bio rv" style="--d:5">Música, histórias e encontros que carregam propósito.</p>
+  </div>
+  <span id="sHero" aria-hidden="true"></span>
+</header>
+
+<main class="wrap stack">
+
+  <noscript>
+    <p class="noscript">Ative o JavaScript para abrir os links desta página.</p>
+  </noscript>
+
+  <!-- ══ S2 · VITRINE DE LINKS ═════════════════════════════════ -->
+  <section class="links" aria-label="Canais da Alana Tavano">
+
+    <a class="card card--hero rv" style="--d:0" data-link="site"
+       aria-label="Site Oficial — abre em nova aba">
+      <span class="tile" aria-hidden="true">
+        <svg class="ic" viewBox="0 0 24 24">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/>
+          <path d="M9 22V12h6v10"/>
+        </svg>
+      </span>
+      <span class="card__txt">
+        <span class="card__t">Site Oficial</span>
+        <span class="card__s">Conheça a trajetória, projetos, músicas e novidades</span>
+      </span>
+      <span class="card__go" aria-hidden="true"><svg class="ic"><use href="#i-go"/></svg></span>
+    </a>
+
+    <a class="card card--yt rv" style="--d:1" data-link="youtube"
+       aria-label="YouTube — abre em nova aba">
+      <span class="tile" aria-hidden="true"><svg class="ic"><use href="#i-yt"/></svg></span>
+      <span class="card__txt">
+        <span class="card__t">YouTube</span>
+        <span class="card__s">Assista aos clipes, apresentações e conteúdos da Alana</span>
+      </span>
+      <span class="card__go" aria-hidden="true"><svg class="ic"><use href="#i-go"/></svg></span>
+    </a>
+
+    <a class="card card--eventos rv" style="--d:2" data-link="eventos"
+       aria-label="Contato para Eventos — abre em nova aba">
+      <span class="tile" aria-hidden="true">
+        <svg class="ic" viewBox="0 0 24 24">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+      </span>
+      <span class="card__txt">
+        <span class="card__t">Contato para Eventos</span>
+        <span class="card__s">Shows, apresentações, igrejas, conferências e eventos</span>
+      </span>
+      <span class="card__go" aria-hidden="true"><svg class="ic"><use href="#i-go"/></svg></span>
+    </a>
+
+  </section>
+
+  <!-- ══ S3 · FAIXA DE CONTEXTO ════════════════════════════════ -->
+  <section class="ctx" aria-label="O que você encontra">
+    <div class="ctx__i rv" style="--d:0">
+      <span class="ctx__ic" aria-hidden="true">
+        <svg class="ic" viewBox="0 0 24 24">
+          <path d="M12 3v12m0-12l-6 6m6-6l6 6m-6 6l-6-6m6 6l6-6"/>
+        </svg>
+      </span>
+      <div>
+        <h2 class="ctx__t">Música & Letra</h2>
+        <p class="ctx__p">Composições autênticas que conectam emoções e histórias.</p>
+      </div>
+    </div>
+    <div class="ctx__i rv" style="--d:1">
+      <span class="ctx__ic" aria-hidden="true">
+        <svg class="ic" viewBox="0 0 24 24">
+          <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7 7-7z"/>
+        </svg>
+      </span>
+      <div>
+        <h2 class="ctx__t">Arte & Expressão</h2>
+        <p class="ctx__p">Arte que nasce da sensibilidade e busca tocar o coração.</p>
+      </div>
+    </div>
+    <div class="ctx__i rv" style="--d:2">
+      <span class="ctx__ic" aria-hidden="true">
+        <svg class="ic" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 8v4l3 3"/>
+        </svg>
+      </span>
+      <div>
+        <h2 class="ctx__t">Encontros & Eventos</h2>
+        <p class="ctx__p">Experiências musicais que criam conexões profundas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ S4 · CTA DE FECHAMENTO ════════════════════════════════ -->
+  <section class="close">
+    <h2 class="close__h rv" style="--d:0">Encontre-se com a música.</h2>
+    <a class="btn close__b rv" style="--d:1" id="ctaFim" data-link="site"
+       aria-label="Site Oficial — abre em nova aba">
+      <svg class="ic" aria-hidden="true">
+        <path d="M12 3v12m0-12l-6 6m6-6l6 6m-6 6l-6-6m6 6l6-6"/>
+      </svg>
+      Acessar Site Oficial
+      <span class="btn__go" aria-hidden="true"><svg class="ic"><use href="#i-go"/></svg></span>
+    </a>
+  </section>
+</main>
+
+<!-- ══ S5 · RODAPÉ ════════════════════════════════════════════ -->
+<footer class="foot wrap">
+  <div class="foot__id">
+    <svg class="ic" viewBox="0 0 24 24" width="22" height="22">
+      <path d="M12 3v12m0-12l-6 6m6-6l6 6m-6 6l-6-6m6 6l6-6"/>
+    </svg>
+    <span>Alana Tavano</span>
+  </div>
+  <p class="foot__c">© 2026 · Todos os direitos reservados</p>
+  <p class="foot__r">Cantora, artista e autora · Música que nasce do coração e encontra o seu.</p>
+</footer>
+
+<!-- ══ S6 · BARRA FIXA (mobile) ══════════════════════════════ -->
+<div class="dock" id="dock">
+  <a class="btn" data-link="cadastro" tabindex="-1" aria-hidden="true">
+    Acessar Site Oficial
+    <span class="btn__go"><svg class="ic"><use href="#i-go"/></svg></span>
+  </a>
+</div>
+
+<script>
+(function(){
+'use strict';
+
+var CFG     = window.LINKS || {};
+var REDUZIR = matchMedia('(prefers-reduced-motion: reduce)').matches;
+var TOQUE   = !matchMedia('(hover:hover) and (pointer:fine)').matches;
+
+/* ═══════════════════════════════════════════════════════════════
+   WIRING
+   ═══════════════════════════════════════════════════════════════ */
+(function wiring(){
+  var mapa = {}, usados = {};
+  (CFG.destinos || []).forEach(function(d){ mapa[d.id] = d; });
+
+  var pagina   = new URLSearchParams(location.search);
+  var repassar = ['utm_source','utm_medium','utm_campaign','utm_term',
+                  'utm_id','gclid','fbclid','ttclid'];
+
+  document.querySelectorAll('[data-link]').forEach(function(el){
+    var id = el.getAttribute('data-link'), d = mapa[id];
+    if(!d){
+      console.warn('[LINKS] data-link="' + id + '" não existe em window.LINKS.destinos');
+      return;
+    }
+    var u;
+    try { u = new URL(d.url); }
+    catch(e){ console.warn('[LINKS] URL inválida em "' + id + '":', d.url); return; }
+
+    if(CFG.PASSAR_UTMS){
+      repassar.forEach(function(k){ if(pagina.has(k)) u.searchParams.set(k, pagina.get(k)); });
+      u.searchParams.set('utm_content', id);
+    }
+    el.href   = u.toString();
+    el.target = '_blank';
+    el.rel    = 'noopener noreferrer';
+    usados[id] = true;
+  });
+
+  Object.keys(mapa).forEach(function(id){
+    if(!usados[id]) console.warn('[LINKS] destino "' + id + '" está no config, mas nenhum card usa data-link="' + id + '"');
+  });
+})();
+
+/* ═══════════════════════════════════════════════════════════════
+   REVEAL · M-03
+   ═══════════════════════════════════════════════════════════════ */
+(function reveal(){
+  var noHero = document.querySelectorAll('.hero .rv');
+  var resto  = document.querySelectorAll('main .rv');
+
+  requestAnimationFrame(function(){
+    requestAnimationFrame(function(){
+      noHero.forEach(function(el){ el.classList.add('in'); });
+    });
+  });
+
+  if(!('IntersectionObserver' in window)){
+    resto.forEach(function(el){ el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(itens){
+    itens.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin:'0px 0px -6% 0px', threshold:.14 });
+  resto.forEach(function(el){ io.observe(el); });
+})();
+
+/* ═══════════════════════════════════════════════════════════════
+   MOTIONS · M-02 parallax · M-07 spotlight
+   ═══════════════════════════════════════════════════════════════ */
+(function motions(){
+  var img = document.getElementById('heroImg');
+  if(img){
+    var pronto = function(){ img.classList.add('is-ready'); };
+    if(img.complete) pronto();
+    else { img.addEventListener('load', pronto); img.addEventListener('error', pronto); }
+  }
+  if(REDUZIR) return;
+
+  var media = document.getElementById('heroMedia');
+  var hero  = document.querySelector('.hero');
+  if(media && hero){
+    var esperando = false, altura = hero.offsetHeight;
+    var desenha = function(){
+      esperando = false;
+      var y = window.pageYOffset || 0;
+      if(y > altura + 40) return;
+      media.style.transform = 'translate3d(0,' + (y * .25).toFixed(2) + 'px,0)';
+    };
+    addEventListener('scroll', function(){
+      if(!esperando){ esperando = true; requestAnimationFrame(desenha); }
+    }, {passive:true});
+    addEventListener('resize', function(){ altura = hero.offsetHeight; }, {passive:true});
+    desenha();
+  }
+
+  if(!TOQUE){
+    var spot  = document.getElementById('spot');
+    var stack = document.querySelector('.stack');
+    if(spot && stack){
+      var mx = 0, my = 0, agendado = false, topo = 0, base = 0;
+      var mede = function(){
+        var r = stack.getBoundingClientRect();
+        topo = r.top - 90; base = r.bottom + 90;
+      };
+      var pinta = function(){
+        agendado = false;
+        spot.style.setProperty('--mx', mx + 'px');
+        spot.style.setProperty('--my', my + 'px');
+        spot.classList.toggle('is-on', my > topo && my < base);
+      };
+      mede();
+      addEventListener('mousemove', function(e){
+        mx = e.clientX; my = e.clientY;
+        if(!agendado){ agendado = true; requestAnimationFrame(pinta); }
+      }, {passive:true});
+      addEventListener('scroll', mede, {passive:true});
+      addEventListener('resize', mede, {passive:true});
+    }
+  }
+})();
+
+/* ═══════════════════════════════════════════════════════════════
+   CLIPBOARD · M-09
+   ═══════════════════════════════════════════════════════════════ */
+(function clipboard(){
+  var btn = document.getElementById('handle');
+  if(!btn) return;
+  var alvo   = document.getElementById('handleTxt');
+  var aviso  = document.getElementById('say');
+  var handle = (CFG.perfil && CFG.perfil.handle) || '@lucasmorais';
+  var origem = alvo.innerHTML, timer;
+
+  function troca(html){
+    alvo.style.opacity = '0';
+    setTimeout(function(){ alvo.innerHTML = html; alvo.style.opacity = '1'; }, 130);
+  }
+  function ok(){
+    clearTimeout(timer);
+    troca('copiado \u2713');
+    btn.setAttribute('data-copied','1');
+    aviso.textContent = handle + ' copiado';
+    timer = setTimeout(function(){
+      troca(origem);
+      btn.removeAttribute('data-copied');
+      aviso.textContent = '';
+    }, 1400);
+  }
+  function manual(){
+    try{
+      var ta = document.createElement('textarea');
+      ta.value = handle; ta.setAttribute('readonly','');
+      ta.style.cssText = 'position:fixed;left:-9999px;top:0';
+      document.body.appendChild(ta);
+      ta.select(); document.execCommand('copy');
+      document.body.removeChild(ta);
+      ok();
+    }catch(e){}
+  }
+  btn.addEventListener('click', function(){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(handle).then(ok, manual);
+    } else manual();
+  });
+})();
+
+/* ═══════════════════════════════════════════════════════════════
+   STICKY · M-10
+   ═══════════════════════════════════════════════════════════════ */
+(function sticky(){
+  var dock = document.getElementById('dock');
+  var fim  = document.getElementById('sHero');
+  var cta  = document.getElementById('ctaFim');
+  if(!dock || !fim || !cta || !('IntersectionObserver' in window)) return;
+
+  var passouHero = false, ctaVisivel = false;
+  var atualiza = function(){ dock.classList.toggle('is-on', passouHero && !ctaVisivel); };
+
+  new IntersectionObserver(function(e){
+    passouHero = !e[0].isIntersecting; atualiza();
+  }).observe(fim);
+
+  new IntersectionObserver(function(e){
+    ctaVisivel = e[0].isIntersecting; atualiza();
+  }, { threshold:.25 }).observe(cta);
+})();
+
+})();
+</script>
+</body>
+</html>

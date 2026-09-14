@@ -287,7 +287,7 @@ a:focus-visible,button:focus-visible{
 }
 .hero__mark{
   position:absolute;top:32px;left:0;right:0;margin-inline:auto;
-  width:150px;height:auto;
+  width:200px;height:auto;
   filter:drop-shadow(0 4px 18px rgba(110,59,255,.55));
 }
 .hero__content{display:flex;flex-direction:column;align-items:center;padding-bottom:4px}
@@ -386,7 +386,7 @@ a:focus-visible,button:focus-visible{
   text-align:center;
 }
 .foot__id{display:flex;align-items:center;justify-content:center;gap:9px}
-.foot__id img{width:22px;height:22px;opacity:.9}
+.foot__logo{width:150px;height:auto;opacity:.9}
 .foot__id span{font-size:.875rem;font-weight:600;letter-spacing:-.01em}
 .foot__c{margin-top:10px;font-size:.75rem;color:var(--text-3)}
 .foot__r{margin-top:14px;font-size:.75rem;line-height:1.55;color:var(--text-3);max-width:44ch;margin-inline:auto}
@@ -518,7 +518,8 @@ a:focus-visible,button:focus-visible{
   .hero__media{background-position:center 46%}
   .ava{width:92px;height:92px;margin-bottom:16px}
   .ava img{width:92px;height:92px}
-  .hero__mark{width:130px;height:auto;top:26px}
+  .hero__mark{width:170px;height:auto;top:26px}
+  .foot__logo{width:130px}
   .ctx{grid-template-columns:1fr;gap:10px}
   .ctx__i{display:flex;align-items:flex-start;gap:14px;padding:14px}
   .ctx__ic{margin-bottom:0}
@@ -612,7 +613,7 @@ a:focus-visible,button:focus-visible{
   <div class="hero__glow" aria-hidden="true"></div>
 
   <img class="hero__mark rv" style="--d:0" src="./logo alana cinza.png" width="2048" height="682"
-       decoding="async" alt="Símbolo do Lucas Morais">
+       decoding="async" alt="Alana Tavano">
 
   <div class="hero__content wrap">
     <div class="ava rv" style="--d:1">
@@ -743,10 +744,7 @@ a:focus-visible,button:focus-visible{
 <!-- ══ S5 · RODAPÉ ════════════════════════════════════════════ -->
 <footer class="foot wrap">
   <div class="foot__id">
-    <svg class="ic" viewBox="0 0 24 24" width="22" height="22">
-      <path d="M12 3v12m0-12l-6 6m6-6l6 6m-6 6l-6-6m6 6l6-6"/>
-    </svg>
-    <span>Alana Tavano</span>
+    <img class="foot__logo" src="./logo alana cinza.png" width="2048" height="682" loading="lazy" alt="Alana Tavano">
   </div>
   <p class="foot__c">© 2026 · Todos os direitos reservados</p>
   <p class="foot__r">Cantora, artista e autora · Música que nasce do coração e encontra o seu.</p>
